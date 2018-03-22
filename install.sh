@@ -27,6 +27,13 @@ install_brew() {
     fi
 }
 
+install_brew_cask() {
+
+ 	if ! exists "brew cask"; then
+		brew tap caskroom/cask
+    fi
+}
+
 brew_install() {
 
 	if ! exists "$1";then
@@ -37,6 +44,11 @@ brew_install() {
 
 	success "本地已安装$1"
 
+}
+
+brew_cask_instal() {
+
+	brew cask install $1
 }
 
 npm_install() {
@@ -62,6 +74,7 @@ npm_global_install() {
 
 init() {
 	install_brew
+	install_brew_cask
 	ret="$?"
 	success "初始化完成"
 }
@@ -75,9 +88,17 @@ brew_install git
 brew_install tig
 brew_install vim
 
+brew_cask_instal google-chrome
+brew_cask_instal wewechat
+brew_cask_instal  dingtalk-beta
+
 
 npm_global_install yarn
 npm_global_install cnpm 
 npm_global_install anyproxy 
+npm_global_install n 
+npm_global_install nvm 
+npm_global_install react-native-cli
+npm_global_install vue-cli
 
 
