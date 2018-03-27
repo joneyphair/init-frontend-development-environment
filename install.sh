@@ -89,8 +89,6 @@ brew_install tig
 brew_install vim
 
 brew_cask_instal google-chrome
-brew_cask_instal wewechat
-brew_cask_instal  dingtalk-beta
 
 
 npm_global_install yarn
